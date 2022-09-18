@@ -1,0 +1,30 @@
+﻿@{
+    string result;
+    string color;
+}
+
+@if (ViewBag.Sonuc != null)
+{
+    result = ViewBag.Sonuc.ToString();
+    color = "success";
+    if (result.EndsWith("!"))
+    {
+        color = "danger";
+    }
+    <p class="text-@color">
+        @result
+    </p>
+}
+
+@if (TempData["Sonuc"] != null)
+{
+    result = TempData["Sonuc"].ToString();
+    color = "success";
+    if (result.EndsWith("!"))
+    {
+        color = "danger";
+    }
+    <p class="text-@color">
+        @result
+    </p>
+}
